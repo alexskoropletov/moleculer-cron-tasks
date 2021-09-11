@@ -1,6 +1,6 @@
 {
   "name": "@skoropletov/moleculer-cron-tasks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mixin for Node-Cron",
   "main": "./build/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "moleculer": "^0.14.16",
-    "node-cron": "^3.0.0"
+    "node-cron": "^3.0.0",
+    "tz-offset": "^0.0.2"
   }
 }
