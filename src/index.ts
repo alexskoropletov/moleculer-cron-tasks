@@ -5,7 +5,7 @@ import { Timezone } from 'tz-offset';
 export interface CronTask {
   name: string;
   cronTime: string;
-  timezone: Timezone | undefined;
+  timezone?: Timezone;
   task(): void;
 };
 
