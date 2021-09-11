@@ -6,28 +6,32 @@ export interface CronTask {
   name: string;
   cronTime: string;
   timezone?: Timezone;
-  task(): void;
+  callback(): void | Promise<void>;
 };
 
 const CronTasks: ServiceSchema = {
-  crons: [] as ScheduledTask[],
+  tasks: [] as ScheduledTask[],
   name: "cron-tasks",
 	created() {
-		this.crons = [];
-		if (this.schema.crons) {
-			this.crons = (this.schema.crons as CronTask[])
-        .map((job: CronTask) => cron.schedule(job.cronTime, job.task, { timezone: job.timezone }));
+		this.tasks = [];
+		if (Array.isArray(this.schema.tasks)) {
+			this.tasks = (this.schema.tasks as CronTask[])
+        .map((task: CronTask) => cron.schedule(
+          task.cronTime,
+          task.callback,
+          { timezone: task.timezone }
+        ));
 		}
 		return this.Promise.resolve();
 	},
 	async started(): Promise<void> {
-		this.crons.map((job: ScheduledTask) => {
-			job.start();
+		this.tasks.map((task: ScheduledTask) => {
+			task.start();
 		});
 	},
 	async stopped(): Promise<void> {
-		this.crons.map((job: ScheduledTask) => {
-			job.stop();
+		this.tasks.map((task: ScheduledTask) => {
+			task.stop();
 		});
 	}
 };

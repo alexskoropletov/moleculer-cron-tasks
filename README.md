@@ -15,11 +15,11 @@ const brokerNode1 = new ServiceBroker({
 brokerNode1.createService({
   name: 'cron-service',
   mixins: [CronTasks],
-  crons: [
+  tasks: [
     {
       name: 'log-seconds',
       cronTime: '* * * * * *',
-      task: (): void => {
+      callback: (): void => {
         console.log('[!] second passed');
       },
     }

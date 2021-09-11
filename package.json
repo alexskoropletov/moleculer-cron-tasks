@@ -1,6 +1,6 @@
 {
   "name": "@skoropletov/moleculer-cron-tasks",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mixin for Node-Cron",
   "main": "./build/index.js",
   "scripts": {
