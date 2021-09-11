@@ -1,0 +1,34 @@
+{
+  "name": "moleculer-cron-tasks",
+  "version": "0.0.1",
+  "description": "Mixin for Node-Cron",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "rm -rf build && tsc -p ."
+  },
+  "keywords": [
+    "microservice",
+    "moleculer",
+    "cron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alexskoropletov/moleculer-cron-tasks.git"
+  },
+  "homepage": "https://github.com/alexskoropletov/moleculer-cron-tasks#readme",
+  "author": "Aleksandr Skoropletov",
+  "peerDependencies": {
+    "moleculer": "^0.14.16"
+  },
+  "devDependencies": {
+    "@types/node-cron": "^2.0.4",
+    "typescript": "^4.4.2"
+  },
+  "engines": {
+    "node": ">= 12.x.x"
+  },
+  "dependencies": {
+    "moleculer": "^0.14.16",
+    "node-cron": "^3.0.0"
+  }
+}
