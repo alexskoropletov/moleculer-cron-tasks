@@ -2,7 +2,9 @@
 
 # moleculer-cron-tasks 
 
-'''
+Moleculer Service for https://www.npmjs.com/package/node-cron
+
+```js
 import { ServiceBroker } from 'moleculer';
 import CronTasks, { CronTask } from '@skoropletov/moleculer-cron-tasks';
 
@@ -23,4 +25,4 @@ brokerNode1.createService({
     }
   ] as CronTask[]
 });
-'''
+```
