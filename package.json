@@ -1,5 +1,5 @@
 {
-  "name": "moleculer-cron-tasks",
+  "name": "@skoropletov/moleculer-cron-tasks",
   "version": "0.0.1",
   "description": "Mixin for Node-Cron",
   "main": "./build/index.js",
